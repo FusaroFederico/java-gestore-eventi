@@ -11,6 +11,8 @@ public class Evento {
 	
 	// costruttore
 	public Evento(String titolo, GregorianCalendar data, int postiTotale) {
+		EventoValidUtils.dataValidator(data);
+		EventoValidUtils.postiTotaleValidator(postiTotale);
 		this.titolo = titolo;
 		this.data = data;
 		this.postiTotale = postiTotale;
