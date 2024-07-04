@@ -21,6 +21,12 @@ public class Concerto extends Evento {
 		return String.format("Prezzo: %.2f €", this.prezzo);
 	}
 	
+	// metodo che restituisce data e ora formattata
+	public String getDataEOra() {
+		return "In data: " + getData().get(Calendar.DAY_OF_MONTH) + "/" + (getData().get(Calendar.MONTH) + 1) + "/" + 
+				getData().get(Calendar.YEAR) + " - Alle: " + ora.getHour() + ":" + ora.getMinute();
+	}
+	
 	// getters and setters
 	public LocalTime getOra() {
 		return ora;
