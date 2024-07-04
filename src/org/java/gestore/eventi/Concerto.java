@@ -16,6 +16,11 @@ public class Concerto extends Evento {
 		this.prezzo = prezzo;
 	}
 	
+	// metodo che restituisce prezzo formattato
+	public String getPrezzoFormattato() {
+		return String.format("Prezzo: %.2f €", this.prezzo);
+	}
+	
 	// getters and setters
 	public LocalTime getOra() {
 		return ora;
