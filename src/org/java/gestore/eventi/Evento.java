@@ -47,6 +47,14 @@ public class Evento {
 			this.postiPrenotati --;
 		}
 	}
+	
+	// Override del metodo toString
+	@Override
+	public String toString() {
+		return data.get(Calendar.DAY_OF_MONTH) + "/" + (data.get(Calendar.MONTH) + 1) + "/" + 
+				data.get(Calendar.YEAR) + " - " + this.titolo;
+	}
+	
 	// Getters and Setters
 	public String getTitolo() {
 		return this.titolo;
