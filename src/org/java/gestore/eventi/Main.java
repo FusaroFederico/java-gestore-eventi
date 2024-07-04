@@ -70,6 +70,43 @@ public class Main {
 			System.out.println("I posti prenotati sono: " + evento.getPostiPrenotati() + ".");
 			// stampa i posti disponibili
 			System.out.println("Sono ancora disponibili: " + (evento.getPostiTotale() - evento.getPostiPrenotati()) + " posti.");
+			
+			// chiede all'utente se vuole disdire prenotazioni
+			System.out.println("Vuoi effettuare delle disdette si/no?");
+			String sceltaDisdici = scanner.nextLine();
+			
+			// se la risposta è si: chiede all'utente quanti posti vuole disdire
+			if (sceltaDisdici.equals("si")) {
+				boolean checkInputUtente = false; // variabile boolean di controllo dell'input
+				int postiDaDisdire = 0;
+				
+				// ciclo while per il controllo dell'input postiDaDisdire
+				while (!checkInputUtente) {
+					checkInputUtente = true;
+					System.out.println("Quanti posti vuoi disdire?");
+					postiDaDisdire = Integer.parseInt(scanner.nextLine());
+					// se inserisce un numero negativo dà un messaggio di errore
+					// e pone nuovamente la domanda
+					if (postiDaDisdire < 0) {
+						System.out.println("Attenzione! Hai inserito un numero negativo. Riprova.");
+						checkInputUtente = false;
+					}
+					// se postiDaDisdire supera le prenotazioni dà un messaggio di errore
+					// e pone nuovamente la domanda
+					if (postiDaDisdire > evento.getPostiPrenotati()) {
+						System.out.println("Attenzione! L'evento ha solo " + evento.getPostiPrenotati() + " posti prenotati.");
+						checkInputUtente = false;
+					}
+				}
+				// ciclo for che richiama ad ogni iterazione disdici() postiDaDisdire volte
+				for (int i = 1; i <= postiDaDisdire; i++) {
+					evento.disdici();
+				}
+			}
+			// stampa i posti prenotati 
+			System.out.println("I posti prenotati sono: " + evento.getPostiPrenotati() + ".");
+			// stampa i posti disponibili
+			System.out.println("Sono ancora disponibili: " + (evento.getPostiTotale() - evento.getPostiPrenotati()) + " posti.");
 			break;
 		case "no":
 			System.out.println("Arrivederci.");
