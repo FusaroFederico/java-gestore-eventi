@@ -29,4 +29,14 @@ public class EventoUtils {
 		return false;
 	}
 	
+	//metodo che prende una stringa data(gg/mm/aaaa) e la trasforma in un array di interi
+	public static int[] dataToIntArray(String data) {
+		String regex = "[/]";
+		String[] dataArray = data.split(regex);
+		int[] dataArrayInt = new int[3];
+		for (int i = 0; i < 3; i++) {
+			dataArrayInt[i] = Integer.parseInt(dataArray[i]);
+		}
+		return dataArrayInt;
+	}
 }
