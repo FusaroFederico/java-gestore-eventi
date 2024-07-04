@@ -36,6 +36,17 @@ public class Evento {
 			this.postiPrenotati ++;
 		}
 	}
+	
+	// metodo disdici
+	public void disdici() {
+		if (EventoUtils.dataValidator(data)) {
+			System.out.println("Attenzione! L'evento si è già verificato.");
+		} else if (this.postiPrenotati == 0) {
+			System.out.println("Al momento ci sono 0 posti prenotati.");
+		} else {
+			this.postiPrenotati --;
+		}
+	}
 	// Getters and Setters
 	public String getTitolo() {
 		return this.titolo;
