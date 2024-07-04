@@ -25,7 +25,17 @@ public class Evento {
 		this.postiTotale = postiTotale;
 		this.postiPrenotati = 0;
 	}
-
+	
+	// metodo prenota
+	public void prenota() {
+		if (EventoUtils.dataValidator(data)) {
+			System.out.println("Attenzione! L'evento si è già verificato.");
+		} else if (EventoUtils.eventoIsFull(this.postiTotale, this.postiPrenotati)) {
+			System.out.println("Siamo spiacenti, l'evento non ha più posti disponibili.");
+		} else {
+			this.postiPrenotati ++;
+		}
+	}
 	// Getters and Setters
 	public String getTitolo() {
 		return this.titolo;
