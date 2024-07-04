@@ -20,4 +20,13 @@ public class EventoUtils {
 		}
 		return true;
 	}
+	
+	// validatore posti disponibili: ritorna true se postiTotali = postiPrenotati, altrimenti false
+	public static boolean eventoIsFull(int postiTotali, int postiPrenotati) {
+		if (postiTotali == postiPrenotati) {
+			return true;
+		}
+		return false;
+	}
+	
 }
