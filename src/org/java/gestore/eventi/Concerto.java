@@ -27,6 +27,12 @@ public class Concerto extends Evento {
 				getData().get(Calendar.YEAR) + " - Alle: " + ora.getHour() + ":" + ora.getMinute();
 	}
 	
+	// Override del metodo toString
+	@Override
+	public String toString() {
+		return getDataEOra() + " - " + "Titolo: " + getTitolo() + " - " + getPrezzoFormattato();
+	}
+	
 	// getters and setters
 	public LocalTime getOra() {
 		return ora;
