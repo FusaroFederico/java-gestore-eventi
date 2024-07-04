@@ -1,5 +1,6 @@
 package org.java.gestore.eventi;
 
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class Evento {
@@ -11,8 +12,14 @@ public class Evento {
 	
 	// costruttore
 	public Evento(String titolo, GregorianCalendar data, int postiTotale) {
-		EventoValidUtils.dataValidator(data);
-		EventoValidUtils.postiTotaleValidator(postiTotale);
+		// controllo data
+		if (EventoUtils.dataValidator(data)) {
+			throw new IllegalArgumentException("Attenzione! La data inserita è già passata."); 
+		}
+		// controllo postiTotale
+		if (!EventoUtils.postiTotaleValidator(postiTotale)) {
+			throw new IllegalArgumentException("Attenzione! Il numero di posti totale deve essere positivo.");
+		}
 		this.titolo = titolo;
 		this.data = data;
 		this.postiTotale = postiTotale;
