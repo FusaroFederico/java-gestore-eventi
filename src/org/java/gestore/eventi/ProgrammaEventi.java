@@ -40,6 +40,11 @@ public class ProgrammaEventi {
 		return eventiArray.length;
 	}
 	
+	// metodo che svuota la List<Evento> eventi
+	public void svuotaProgrammaEventi() {
+		this.eventi.clear();
+	}
+	
 	// getters and setters
 	public String getTitolo() {
 		return titolo;
