@@ -1,6 +1,7 @@
 package org.java.gestore.eventi;
 
 import java.util.GregorianCalendar;
+import java.util.List;
 
 public class EventoUtils {
 	
@@ -38,5 +39,11 @@ public class EventoUtils {
 			dataArrayInt[i] = Integer.parseInt(dataArray[i]);
 		}
 		return dataArrayInt;
+	}
+	
+	// metodo che ordina gli eventi in una List per data
+	public static void ordinaPerData(List<Evento> eventi) {
+		// uso il metodo sort() che ha bisogno di una funzione di comparazione come parametro
+		eventi.sort((e1, e2) -> e1.getData().compareTo(e2.getData()));
 	}
 }
