@@ -20,6 +20,20 @@ public class ProgrammaEventi {
 		this.eventi.add(evento);
 	}
 	
+	// metodo che restituisce una lista con gli eventi in una certa data
+	public List<Evento> getEventiInData(GregorianCalendar data){
+		ArrayList<Evento> eventiInData = new ArrayList<Evento>();
+		// for che scorre gli eventi nell'arrayList eventi
+		for(int index = 0; index < eventi.size(); index++) {
+			// se la data dell'evento è uguale al parametro data
+			// mette l'evento in eventiInData
+			if (eventi.get(index).getData().equals(data)) {
+				eventiInData.add(eventi.get(index));
+			}
+		}
+		return eventiInData;
+	}
+	
 	// getters and setters
 	public String getTitolo() {
 		return titolo;
