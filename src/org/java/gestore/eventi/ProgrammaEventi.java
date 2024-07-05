@@ -45,6 +45,21 @@ public class ProgrammaEventi {
 		this.eventi.clear();
 	}
 	
+	// Override del metodo toString() che restituisce una stringa che mostra il titolo del programma e 
+	// tutti gli eventi ordinati per data nella forma: 
+	// data - titolo
+	@Override
+	public String toString() {
+		EventoUtils.ordinaPerData(eventi);
+		String listaEventi = "";
+		for (int i = 0; i < eventi.size(); i++) {
+			String listaEventiAgg = listaEventi + "\n" + eventi.get(i).toString();
+			listaEventi = listaEventiAgg;
+		}
+		
+		return this.titolo + "\n" + listaEventi;
+	}
+	
 	// getters and setters
 	public String getTitolo() {
 		return titolo;
