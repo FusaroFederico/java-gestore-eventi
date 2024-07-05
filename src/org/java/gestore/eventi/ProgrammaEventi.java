@@ -15,6 +15,11 @@ public class ProgrammaEventi {
 		this.eventi = new ArrayList<Evento>();
 	}
 	
+	// metodo che aggiunge un Evento a eventi
+	public void aggiungiEvento(Evento evento) {
+		this.eventi.add(evento);
+	}
+	
 	// getters and setters
 	public String getTitolo() {
 		return titolo;
