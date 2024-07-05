@@ -34,6 +34,12 @@ public class ProgrammaEventi {
 		return eventiInData;
 	}
 	
+	// metodo che restituisce quanti eventi ci sono nel programma
+	public int numeroEventiInProgramma() {
+		Object[] eventiArray = this.eventi.toArray();
+		return eventiArray.length;
+	}
+	
 	// getters and setters
 	public String getTitolo() {
 		return titolo;
